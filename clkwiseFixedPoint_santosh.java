@@ -26,7 +26,6 @@ public class clkwiseFixedPoint_santosh extends Frame {
             }
         });
     }
-
     @Override
     public void paint(Graphics g) {
         g.setColor(Color.BLUE);
@@ -68,12 +67,10 @@ public class clkwiseFixedPoint_santosh extends Frame {
         g.setColor(Color.RED);
         g.drawString("After Rotation", rotatedCentroidX + 10, rotatedCentroidY);
 
-        // Draw arbitrary pivot point (Green)
         g.setColor(Color.GREEN);
         g.fillOval(xr - 3, yr - 3, 6, 6);
         g.drawString("Pivot Point", xr + 5, yr - 5);
     }
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
