@@ -10,7 +10,6 @@ public class anticlockwiseRotationDiwas extends JPanel {
     public anticlockwiseRotationDiwas(int[] x, int[] y, double angle) {
         this.x = x;
         this.y = y;
-        // Convert degrees to radians for Math trig functions
         this.angle = Math.toRadians(angle);
     }
 
@@ -21,12 +20,10 @@ public class anticlockwiseRotationDiwas extends JPanel {
         int width = getWidth();
         int height = getHeight();
 
-        // Draw coordinate axes centered at (width/2, height/2)
         g.setColor(Color.LIGHT_GRAY);
-        g.drawLine(0, height / 2, width, height / 2); // X-axis
-        g.drawLine(width / 2, 0, width / 2, height); // Y-axis
+        g.drawLine(0, height / 2, width, height / 2); 
+        g.drawLine(width / 2, 0, width / 2, height); 
 
-        // Offset vertices to origin-centered coordinate space (Y flipped for screen rendering)
         int[] adjustedX = new int[3];
         int[] adjustedY = new int[3];
         for (int i = 0; i < 3; i++) {
@@ -34,14 +31,11 @@ public class anticlockwiseRotationDiwas extends JPanel {
             adjustedY[i] = height / 2 - y[i];
         }
 
-        // Draw original triangle (Blue)
         g.setColor(Color.BLUE);
         g.drawPolygon(adjustedX, adjustedY, 3);
         g.drawString("Original", adjustedX[0] + 5, adjustedY[0] - 5);
 
-        // Counter-clockwise (Anticlockwise) rotation matrix formulas:
-        // x' = x * cos(θ) - y * sin(θ)
-        // y' = x * sin(θ) + y * cos(θ)
+     
         int[] rotatedX = new int[3];
         int[] rotatedY = new int[3];
         for (int i = 0; i < 3; i++) {
@@ -52,7 +46,6 @@ public class anticlockwiseRotationDiwas extends JPanel {
             rotatedY[i] = height / 2 - (int) Math.round(ry);
         }
 
-        // Draw rotated triangle (Red)
         g.setColor(Color.RED);
         g.drawPolygon(rotatedX, rotatedY, 3);
         g.drawString("After Rotation", rotatedX[0] + 5, rotatedY[0] - 5);
