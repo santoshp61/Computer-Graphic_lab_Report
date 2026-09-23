@@ -29,7 +29,7 @@ public class ShearingXY_Santosh extends Frame {
         this.santosh_shx = shx;
         this.santosh_shy = shy;
 
-        setTitle("Shearing in XY-direction -> @DIWAS");
+        setTitle("Shearing in XY-direction -> @SANTOSH");
         setSize(800, 600);
         setLayout(null);
         setLocationRelativeTo(null);
@@ -47,20 +47,16 @@ public class ShearingXY_Santosh extends Frame {
     public void paint(Graphics g) {
         Graphics2D g2 = (Graphics2D) g;
 
-        // Move origin (0, 0) to frame center
         g2.translate(getWidth() / 2, getHeight() / 2);
 
-        // Draw coordinate axes
         g2.setColor(Color.LIGHT_GRAY);
-        g2.drawLine(-getWidth() / 2, 0, getWidth() / 2, 0); // X-axis
-        g2.drawLine(0, -getHeight() / 2, 0, getHeight() / 2); // Y-axis
+        g2.drawLine(-getWidth() / 2, 0, getWidth() / 2, 0); 
+        g2.drawLine(0, -getHeight() / 2, 0, getHeight() / 2); 
 
-        // Draw original 4-sided polygon (Blue)
         g2.setColor(Color.BLUE);
         g2.drawPolygon(santosh_realX, draw_origY, 4);
         g2.drawString("Original", santosh_realX[0] + 10, draw_origY[0] - 10);
 
-        // Draw sheared 4-sided polygon (Red)
         g2.setColor(Color.RED);
         g2.drawPolygon(santosh_shearX, draw_shearY, 4);
         g2.drawString("Sheared", santosh_shearX[0] + 10, draw_shearY[0] - 10);
