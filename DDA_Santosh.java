@@ -61,7 +61,7 @@ public class DDA_Santosh extends Frame {
             int px = Math.round(x) + centerX;
             int py = centerY - Math.round(y);  
             g.fillRect(px, py, 1, 1);
-            x += Xinc;
+            x += Xinc; 
             y += Yinc;
         }
     }
